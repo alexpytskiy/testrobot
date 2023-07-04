@@ -50,10 +50,10 @@ try:
     date_first.click()
     time.sleep(5)
 
-    date_first_2 = driver.find_element(By.XPATH, '//div[@data-layer-child="true"]')
+    date_first_2 = driver.find_element(By.XPATH, "//input[@name type='hidden']")
     time.sleep(5)
-    date_first_2.clear()
-    date_first_2.send_keys("20230101")
+    date_first_2.click()
+    #date_first_2.send_keys("20230101")
     print("OK")
     #date_first_2.clear()
     #date_first_2.send_keys(Keys.BACKSPACE)
