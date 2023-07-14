@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver import Keys, ActionChains
 from auth_data import portal_password
+from dates import cell_2
 
 
 options = webdriver.ChromeOptions()
@@ -48,17 +49,18 @@ try:
     print("report_button OK")
 
     #Выбираем начальную дату в календаре
-    #date_first = driver.find_element(By.XPATH, "//div[@class='css-1wy0on6']")
-    #date_first = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[2]/form/div[3]/div[1]/div/div/input')
     date_first = driver.find_element(By.XPATH, "//div[@class='css-s1rjxz']")
     date_first.click()
     time.sleep(5)
     print("выбрал календарик")
 
+    #ищем путь до ввода значения начальной даты
     date_first_2 = driver.find_element(By.XPATH, '// *[ @ id = "react-select-2-input"]')
-    date_first_2.send_keys("20230505")
 
-    print("ввел дату")
+    #вводим значение даты из dates.py (переменная cell_2)
+    date_first_2.send_keys(cell_2)
+
+    print("ввел начальную дату отчета")
     time.sleep(10)
 
     #стартовать формирование отчетности
