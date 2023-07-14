@@ -63,24 +63,6 @@ try:
     print("ввел начальную дату отчета")
     time.sleep(10)
 
-    #стартовать формирование отчетности
-    #date_first_2.submit()
-
-    #// *[ @ id = "react-select-2-input"]
-    # react-select-2-input
-
-    # actions.send_keys(Keys.BACKSPACE)
-    # time.sleep(5)
-    # print("типа нажал backspace")
-
-    # date_first_2 = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[2]/form/div[3]/div[1]/div/div/div/div/div')
-    # date_first_2.click()
-    # time.sleep(5)
-
-
-
-    # print("OKOKOK")
-
 except Exception as ex:
     print(ex)
 finally:
