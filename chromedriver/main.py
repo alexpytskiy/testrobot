@@ -49,10 +49,10 @@ try:
     print("report_button OK")
 
     #Выбираем начальную дату в календаре
-    date_first = driver.find_element(By.XPATH, "//div[@class='css-s1rjxz']")
-    date_first.click()
-    time.sleep(5)
-    print("выбрал календарик")
+    #date_first = driver.find_element(By.XPATH, "//div[@class='css-s1rjxz']")
+    #date_first.click()
+    #time.sleep(5)
+    #print("выбрал календарик")
 
     #ищем путь до ввода значения начальной даты
     date_first_2 = driver.find_element(By.XPATH, '// *[ @ id = "react-select-2-input"]')
@@ -62,6 +62,17 @@ try:
 
     print("ввел начальную дату отчета")
     time.sleep(10)
+
+    # date_first_exit = driver.find_element(By.XPATH, '// *[ @ id = "react-select-2-input"]')
+    # date_first_exit.click()
+    # time.sleep(5)
+    # print("убрал календарик")
+    #
+    # special = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[2]/form/div[4]/div[7]/label/div/span[1]/span/svg/g/path')
+    # special.click()
+    # print("установил галку не учитывать межскладскую передачу")
+    # time.sleep(10)
+
 
 except Exception as ex:
     print(ex)
