@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver import Keys, ActionChains
 from auth_data import portal_password
-from dates import cell_2
+from dates import date_2
 
 
 options = webdriver.ChromeOptions()
@@ -58,7 +58,7 @@ try:
     date_first_2 = driver.find_element(By.XPATH, '// *[ @ id = "react-select-2-input"]')
 
     #вводим значение даты из dates.py (переменная cell_2)
-    date_first_2.send_keys(cell_2)
+    date_first_2.send_keys(date_2)
 
     print("ввел начальную дату отчета")
     time.sleep(10)
