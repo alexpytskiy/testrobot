@@ -30,7 +30,7 @@ try:
     time.sleep(2)
     print("login OK")
 
-    #Вводим пароль на Портале
+    #вводим пароль на Портале
     password_input = driver.find_element(By.CSS_SELECTOR, 'input[type="password" i]')
     password_input.click()
     password_input.clear()
@@ -38,47 +38,43 @@ try:
     time.sleep(2)
     print("password OK")
 
-    #Входим под логином и паролем на Портал
+    #входим под логином и паролем на Портал
     login_button = driver.find_element(By.CSS_SELECTOR, 'button').click()
     time.sleep(5)
     print("auth OK")
 
-    #Жмем кнопку "Товародвижение аптек"
+    #жмем кнопку "Товародвижение аптек"
     report_button = driver.find_element(By.XPATH, "//*[contains(text(), 'Товародвижение аптек')]").click()
     time.sleep(5)
     print("report_button OK")
 
-
+    #устанавливаем галку "Не учитывать межскладскую передачу"
     special = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[2]/form/div[4]/div[7]/label/div/span[1]')
     special.click()
     time.sleep(5)
     print("установил галку Не учитывать межскладскую передачу")
-
-    #Выбираем начальную дату в календаре
-    #date_first = driver.find_element(By.XPATH, "//div[@class='css-s1rjxz']")
-    #date_first.click()
-    #time.sleep(5)
-    #print("выбрал календарик")
 
     #ищем путь до ввода значения начальной даты
     date_first_2 = driver.find_element(By.XPATH, '// *[ @ id = "react-select-2-input"]')
 
     #вводим значение даты из dates.py (переменная cell_2)
     date_first_2.send_keys(date_2)
-
     print("ввел начальную дату отчета")
     time.sleep(10)
 
-    # date_first_exit = driver.find_element(By.XPATH, '// *[ @ id = "react-select-2-input"]')
-    # date_first_exit.click()
-    # time.sleep(5)
-    # print("убрал календарик")
-    #
-    # special = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[2]/form/div[4]/div[7]/label/div/span[1]/span/svg/g/path')
-    # special.click()
-    # print("установил галку не учитывать межскладскую передачу")
-    # time.sleep(10)
+    #жмем кнопку "Выгрузить в csv"
+    generate = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[1]/div/div/button[2]/span/span')
+    generate.click()
+    time.sleep(600)
+    print("дождался формирования отчета")
 
+    #скачиваем отчет
+    bell = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[1]/div/div[2]/div[1]/div/div/div[1]/div/div/div/span/svg')
+    bell.click()
+    download = driver.find_element(By.XPATH, '//*[@id="95765c50-26cc-11ee-a404-17cb40e9608e"]/div/div/span[2]/span/span/div/div/div[3]/button[1]')
+    download.click()
+    time.sleep(300)
+    print("скачал отчет")
 
 except Exception as ex:
     print(ex)
