@@ -48,6 +48,12 @@ try:
     time.sleep(5)
     print("report_button OK")
 
+
+    special = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[2]/form/div[4]/div[7]/label/div/span[1]')
+    special.click()
+    time.sleep(5)
+    print("установил галку Не учитывать межскладскую передачу")
+
     #Выбираем начальную дату в календаре
     #date_first = driver.find_element(By.XPATH, "//div[@class='css-s1rjxz']")
     #date_first.click()
