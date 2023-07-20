@@ -69,8 +69,10 @@ try:
     print("дождался формирования отчета")
 
     #скачиваем отчет
-    bell = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[1]/div/div[2]/div[1]/div/div/div[1]/div/div/div/span/svg')
+    bell = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[1]/div/div[2]/div[1]/div/div/div[1]/div/div/div/span')
     bell.click()
+    time.sleep(5)
+    print("нажал колокольчик")
     download = driver.find_element(By.XPATH, '//*[@id="95765c50-26cc-11ee-a404-17cb40e9608e"]/div/div/span[2]/span/span/div/div/div[3]/button[1]')
     download.click()
     time.sleep(300)
