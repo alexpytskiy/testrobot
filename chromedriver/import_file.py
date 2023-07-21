@@ -17,7 +17,7 @@ print(new_filename)
 #перемещаем новый файл в нужную папку
 new_path = "L:\\ОТДЕЛЫ\\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\\!Python projects\\выгрузки\\" + "123.pptx"
 shutil.move(new_filename, new_path)
-
+time.sleep(100)
 print(new_path)
 
 
