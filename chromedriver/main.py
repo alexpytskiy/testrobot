@@ -99,4 +99,4 @@ finally:
     driver.close()
     driver.quit()
 
-os.system("L:\\ОТДЕЛЫ\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\!Python projects\\test venv\\chromedriver\\import_file.py")
+os.system("import_file.py")
