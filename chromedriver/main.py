@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import Keys, ActionChains
 from auth_data import portal_password
 from dates import date_2
-import import_file
+
 
 
 
