@@ -15,7 +15,7 @@ new_filename = max([os.path.join(path, f) for f in os.listdir(path)], key=os.pat
 print(new_filename)
 
 #перемещаем новый файл в нужную папку
-new_path = "L:\\ОТДЕЛЫ\\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\\!Python projects\\выгрузки\\" + "123.pptx"
+new_path = "L:\\ОТДЕЛЫ\\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\\!Python projects\\выгрузки\\" + "123.xlsx"
 shutil.move(new_filename, new_path)
 time.sleep(100)
 print(new_path)
