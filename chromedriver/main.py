@@ -5,8 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import Keys, ActionChains
 from auth_data import portal_password
 from dates import date_2
-import os
-
+import subprocess
 
 
 
@@ -99,4 +98,4 @@ finally:
     driver.close()
     driver.quit()
 
-os.system("import_file.py")
+subprocess.run("L:\\ОТДЕЛЫ\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\!Python projects\\test venv\\chromedriver\\import_file.py", shell=True)
