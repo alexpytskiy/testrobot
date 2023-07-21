@@ -10,7 +10,7 @@ filename = max([os.path.join(path, f) for f in os.listdir(path)], key=os.path.ge
 print(filename)
 
 #переименовываем файл
-rename_file = os.rename(filename, os.path.join(path, "123.pptx"))
+rename_file = os.rename(filename, os.path.join(path, "123.xlsx"))
 new_filename = max([os.path.join(path, f) for f in os.listdir(path)], key=os.path.getmtime)
 print(new_filename)
 

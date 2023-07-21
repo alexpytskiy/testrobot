@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import Keys, ActionChains
 from auth_data import portal_password
 from dates import date_2
+import import_file
+
 
 
 options = webdriver.ChromeOptions()
@@ -63,23 +65,37 @@ try:
     time.sleep(10)
 
     #жмем кнопку "Выгрузить в csv"
-    generate = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[1]/div/div/button[2]/span/span')
-    generate.click()
-    time.sleep(600)
-    print("дождался формирования отчета")
+    # generate = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[1]/div/div/button[2]/span/span')
+    # generate.click()
+    # time.sleep(600)
+    # print("дождался формирования отчета")
 
     #скачиваем отчет
-    bell = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[1]/div/div[2]/div[1]/div/div/div[1]/div/div/div/span')
+    bell = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[1]/div/div[2]/div[1]/div/div/div[1]/div/div/div')
     bell.click()
     time.sleep(5)
     print("нажал колокольчик")
-    download = driver.find_element(By.XPATH, '//*[@id="95765c50-26cc-11ee-a404-17cb40e9608e"]/div/div/span[2]/span/span/div/div/div[3]/button[1]')
+
+    download = driver.find_element(By.XPATH,  "//*[contains(text(), 'Скачать')]")
     download.click()
-    time.sleep(300)
+    time.sleep(30)
     print("скачал отчет")
+
+    # закрываем загрузку
+    bell = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[1]/div/div[2]/div[1]/div/div/div[1]/div/div/div')
+    bell.click()
+    time.sleep(5)
+    print("нажал колокольчик")
+
+    close = driver.find_element(By.XPATH,  "//*[contains(text(), 'Закрыть')]")
+    close.click()
+    time.sleep(5)
+    print("закрыл загрузку")
 
 except Exception as ex:
     print(ex)
 finally:
     driver.close()
     driver.quit()
+
+exec(open("L:\\ОТДЕЛЫ\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\!Python projects\\test venv\\chromedriver\\import_file.py").read())
