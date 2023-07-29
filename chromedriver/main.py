@@ -6,6 +6,7 @@ from selenium.webdriver import Keys, ActionChains
 from auth_data import portal_password
 from dates import date_2
 import subprocess
+import import_file
 
 
 
@@ -99,6 +100,6 @@ finally:
     driver.quit()
 
 #необходимо создать функцию
-subprocess.run("L:\\ОТДЕЛЫ\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\!Python projects\\test venv\\chromedriver\\import_file.py", shell=True)
+#subprocess.run("L:\\ОТДЕЛЫ\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\!Python projects\\test venv\\chromedriver\\import_file.py", shell=True)
 
-#test test test
+import_file.import_last_file()
