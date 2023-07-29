@@ -73,18 +73,18 @@ try:
     # скачиваем отчет
     bell = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[1]/div/div[2]/div[1]/div/div/div[1]/div/div/div')
     bell.click()
-    time.sleep(5)
+    time.sleep(10)
     print("нажал колокольчик")
 
     download = driver.find_element(By.XPATH,  "//*[contains(text(), 'Скачать')]")
     download.click()
-    time.sleep(30)
+    time.sleep(300)
     print("скачал отчет")
 
     # закрываем загрузку
     bell = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[1]/div/div[2]/div[1]/div/div/div[1]/div/div/div')
     bell.click()
-    time.sleep(5)
+    time.sleep(30)
     print("нажал колокольчик")
 
     close = driver.find_element(By.XPATH,  "//*[contains(text(), 'Закрыть')]")
