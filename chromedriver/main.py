@@ -5,7 +5,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import Keys, ActionChains
 from auth_data import portal_password
 from dates import date_2
-import subprocess
 import import_file
 
 
@@ -25,7 +24,7 @@ try:
     driver.get(url=url)
     time.sleep(5)
 
-    #вводим логин на Портале
+    # вводим логин на Портале
     login_input = driver.find_element(By.CSS_SELECTOR, 'input[type="text" i]')
     login_input.click()
     login_input.clear()
@@ -33,7 +32,7 @@ try:
     time.sleep(2)
     print("login OK")
 
-    #вводим пароль на Портале
+    # вводим пароль на Портале
     password_input = driver.find_element(By.CSS_SELECTOR, 'input[type="password" i]')
     password_input.click()
     password_input.clear()
@@ -41,37 +40,37 @@ try:
     time.sleep(2)
     print("password OK")
 
-    #входим под логином и паролем на Портал
+    # входим под логином и паролем на Портал
     login_button = driver.find_element(By.CSS_SELECTOR, 'button').click()
     time.sleep(5)
     print("auth OK")
 
-    #жмем кнопку "Товародвижение аптек"
+    # жмем кнопку "Товародвижение аптек"
     report_button = driver.find_element(By.XPATH, "//*[contains(text(), 'Товародвижение аптек')]").click()
     time.sleep(5)
     print("report_button OK")
 
-    #устанавливаем галку "Не учитывать межскладскую передачу"
+    # устанавливаем галку "Не учитывать межскладскую передачу"
     special = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[2]/form/div[4]/div[7]/label/div/span[1]')
     special.click()
     time.sleep(5)
     print("установил галку Не учитывать межскладскую передачу")
 
-    #ищем путь до ввода значения начальной даты
+    # ищем путь до ввода значения начальной даты
     date_first_2 = driver.find_element(By.XPATH, '// *[ @ id = "react-select-2-input"]')
 
-    #вводим значение даты из dates.py (переменная cell_2)
+    # вводим значение даты из dates.py (переменная cell_2)
     date_first_2.send_keys(date_2)
     print("ввел начальную дату отчета")
     time.sleep(10)
 
-    #жмем кнопку "Выгрузить в csv"
-    # generate = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[1]/div/div/button[2]/span/span')
-    # generate.click()
-    # time.sleep(600)
-    # print("дождался формирования отчета")
+    # жмем кнопку "Выгрузить в csv"
+    generate = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div[1]/div/div/button[2]/span/span')
+    generate.click()
+    time.sleep(600)
+    print("дождался формирования отчета")
 
-    #скачиваем отчет
+    # скачиваем отчет
     bell = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[1]/div/div[2]/div[1]/div/div/div[1]/div/div/div')
     bell.click()
     time.sleep(5)
@@ -98,8 +97,5 @@ except Exception as ex:
 finally:
     driver.close()
     driver.quit()
-
-#необходимо создать функцию
-#subprocess.run("L:\\ОТДЕЛЫ\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\!Python projects\\test venv\\chromedriver\\import_file.py", shell=True)
 
 import_file.import_last_file()
