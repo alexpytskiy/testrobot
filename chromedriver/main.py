@@ -98,4 +98,5 @@ finally:
     driver.close()
     driver.quit()
 
+# вызываем функцию переименования и перемещенмия файла
 import_file.import_last_file()

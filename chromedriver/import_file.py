@@ -25,10 +25,10 @@ def import_last_file():
     path = "C:\\Users\\a.pytskiy\\Downloads"
     filename = max([os.path.join(path, f) for f in os.listdir(path)], key=os.path.getmtime)
     print(filename)
-    rename_file = os.rename(filename, os.path.join(path, "123.xlsx"))
+    rename_file = os.rename(filename, os.path.join(path, "123.csv"))
     new_filename = max([os.path.join(path, f) for f in os.listdir(path)], key=os.path.getmtime)
     print(new_filename)
-    new_path = "L:\\ОТДЕЛЫ\\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\\!Python projects\\выгрузки\\" + "123.xlsx"
+    new_path = "L:\\ОТДЕЛЫ\\ОТДЕЛ ФИЛИАЛОВ и ПРЕДСТАВИТЕЛЬСТВ\\Маркетинговый союз\\Отчёты\\!Python projects\\выгрузки\\" + "123.csv"
     shutil.move(new_filename, new_path)
     time.sleep(5)
     print(new_path)
